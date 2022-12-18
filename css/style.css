@@ -1,0 +1,106 @@
+/* ------------------
+  RESET
+------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* ------------------
+    COMMONS
+  ------------------ */
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 2.8125rem;
+    max-width: 92.5rem;
+    margin: auto;
+  }
+  /* ------------------
+    HEADER
+  ------------------ */
+  header {
+    height: 4.375rem;
+    padding: 0.625rem;
+    background-color: #112030;
+  }
+  .logo {
+    margin-left: 6.25rem;
+    filter: invert(87%) sepia(67%) saturate(4114%) hue-rotate(65deg)
+      brightness(85%) contrast(98%);
+  }
+  /* ------------------
+    MAIN
+  ------------------ */
+  main {
+    background-color: #1d2d3c;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+  .card {
+    text-align: center;
+    width: calc(33.333% - 10rem);
+    margin: 0 5rem;
+    padding: 1.875rem 3.75rem;
+    color: white;
+    background-color: #112030;
+    border-radius: 0.625rem;
+    margin-bottom: 5.625rem;
+    cursor: pointer;
+  }
+  .card > * {
+    margin-bottom: 1.25rem;
+  }
+  .img {
+    margin-bottom: 1.875rem;
+  }
+  
+  /* ------------------
+    OFFCANVAS
+  ------------------ */
+  .my-offcanvas {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 4.375rem;
+    bottom: 0;
+    left: -32%;
+    width: 30%;
+    padding: 3.125rem 0;
+    background-color: #112030;
+    border-radius: 0 1.25rem 1.25rem 0;
+    box-shadow: 5px 5px 10px 0px #000000;
+    overflow-y: auto;
+    transition: left 0.8s ease-out;
+  }
+  .cross {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.625rem;
+    color: white;
+    font-size: 3.125rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .active {
+    left: 0;
+  }
+  .offcanvas-card {
+    text-align: center;
+    width: 80%;
+    padding: 1.875rem 3.75rem;
+    color: white;
+    background-color: #112030;
+    border-radius: 0.625rem;
+    margin-bottom: 5.625rem;
+  }
+  .offcanvas-card > * {
+    margin-bottom: 1.25rem;
+  }
