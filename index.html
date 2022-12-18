@@ -4,9 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PHP Dischi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+     <!-- Vue cdn -->
+     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+     <!-- /Vue cdn -->
 </head>
 <body>
-    
-</body>
+    <div id="app">
+      <header>
+        <a href="#"><img class="logo" src="img/logo-small.svg" alt="logo" /></a>
+      </header>
+      <main>
+        <section class="container" @click="active = false">
+          <div
+            @click.stop="getIndex(index)"
+            class="card"
+            v-for="disk, index in disks"
+          >
+            <div class="img">
+              <img :src="disk.poster" :alt="disk.title" />
+            </div>
+            <h2>{{disk.title}}</h2>
+            <div><span>{{disk.author}}</span></div>
+            <h3>{{disk.year}}</h3>
+          </div>
+        </section>
+        <div class="my-offcanvas" :class="{active: active === true}">
+          <div class="cross" @click="active = false">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div class="offcanvas-card">
+            <div class="img">
+              <img
+                :src="disks[diskClicked].poster"
+                :alt="disks[diskClicked].title"
+              />
+            </div>
+            <h2>{{disks[diskClicked].title}}</h2>
+            <div><span>{{disks[diskClicked].author}}</span></div>
+            <h3>{{disks[diskClicked].year}}</h3>
+            <div><span>{{disks[diskClicked].genre}}</span></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
